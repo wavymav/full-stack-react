@@ -7,5 +7,8 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/wavymav/full-stack-react",
-  "moduleType": []
+  "moduleType": [],
+  "dependencies": {
+    "react": "~0.14.2"
+  }
 }
