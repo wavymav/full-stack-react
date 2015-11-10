@@ -1,5 +1,7 @@
-var React = require('react/addons');
-var TodoList = require('./components/TodoList.jsx');
+'use strict';
+
+const React = require('react/addons');
+const TodoList = require('./components/TodoList.jsx');
 
 React.render(<TodoList />, app);
 
