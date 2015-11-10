@@ -1,6 +1,6 @@
 'use strict';
 
-const React = require('react/addons');
+const React = require('react');
 
 let TodoList = React.createClass({
 	render() {

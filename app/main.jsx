@@ -1,6 +1,6 @@
 'use strict';
 
-const React = require('react/addons');
+const React = require('react');
 const TodoList = require('./components/TodoList.jsx');
 
 React.render(<TodoList />, app);
