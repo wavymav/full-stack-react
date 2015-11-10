@@ -18,11 +18,14 @@
   "homepage": "https://github.com/wavymav/full-stack-react#readme",
   "dependencies": {
     "browser-sync": "^2.10.0",
+    "browserify": "^12.0.1",
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
     "gulp": "^3.9.0",
     "gulp-live-server": "0.0.29",
-    "react": "^0.14.2"
+    "react": "^0.14.2",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
