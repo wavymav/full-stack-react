@@ -1,0 +1,11 @@
+{
+  "name": "full-stack-react",
+  "description": "A simple todo app",
+  "main": "index.js",
+  "authors": [
+    "Marcus Barnes"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/wavymav/full-stack-react",
+  "moduleType": []
+}
