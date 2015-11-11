@@ -12,15 +12,20 @@ gulp.task('live-server', () => {
 	server.start();
 });
 
-gulp.task('bundle', () => {
+gulp.task('bundle', ['copy'], () => {
 	return browserify({
 		entries: 'app/main.jsx',
 		debug: true
 	})
-	.transform(reactify)
-	.bundle()
-	.pipe(source('app.js'))
-	.pipe(gulp.dest('./dist'));
+		.transform(reactify)
+		.bundle()
+		.pipe(source('app.js'))
+		.pipe(gulp.dest('./dist'));
+});
+
+gulp.task('copy', () => {
+	gulp.src(['app/*.css'])
+		.pipe(gulp.dest('./dist'));
 });
 
 gulp.task('serve', ['bundle', 'live-server'], () => {

@@ -12,13 +12,13 @@ let TodoList = React.createClass({
 
 	render() {
 		return (
-			<div>
-				<h1>Todo's</h1>
-				<div>
-					<ul>
-						{this.renderTodoItems()}
-					</ul>
-				</div>
+			<div className="container">
+				<header>
+					<h1>Todo's</h1>
+				</header>
+				<ul>
+					{this.renderTodoItems()}
+				</ul>
 			</div>
 		);
 	}

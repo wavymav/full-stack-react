@@ -4,8 +4,12 @@ const React = require('react');
 
 let TodoListItem = React.createClass({
 	render() {
+		const taskClassName = this.props.task.checked ? 'checked' : '';
+
 		return (
-			<li>{this.props.task.todo}</li>
+			<li className={taskClassName}>
+				<span className="text">{this.props.task.todo}</span>
+			</li>
 		);
 	}
 });

@@ -8,7 +8,8 @@ let initialTodos = [
 		todo: '1st Todo list item!'
 	},
 	{
-		todo: '2nd Todo list item!'
+		todo: '2nd Todo list item!',
+		checked: true
 	},
 	{
 		todo: '3rd Todo list item!'
