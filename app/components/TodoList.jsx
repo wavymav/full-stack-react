@@ -1,11 +1,12 @@
 'use strict';
 
 const React = require('react');
+const TodoListItem = require('./TodoListItem.jsx');
 
 let TodoList = React.createClass({
 	renderTodoItems() {
-		return this.props.tasks.map((task) => {
-			return <li>{task.todo}</li>
+		return this.props.tasks.map((task, item) => {
+			return <TodoListItem task={task} key={`tasks${item}`}/>
 		});
 	},
 
