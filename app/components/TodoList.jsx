@@ -2,6 +2,7 @@
 
 const React = require('react');
 const TodoListItem = require('./TodoListItem.jsx');
+const TodoListAddItem = require('./TodoListAddItem.jsx');
 
 let TodoList = React.createClass({
 	renderTodoItems() {
@@ -15,6 +16,7 @@ let TodoList = React.createClass({
 			<div className="container">
 				<header>
 					<h1>Todo's</h1>
+					<TodoListAddItem />
 				</header>
 				<ul>
 					{this.renderTodoItems()}

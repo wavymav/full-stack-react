@@ -22,6 +22,7 @@
     "ejs": "^2.3.4",
     "express": "^4.13.3",
     "express-handlebars": "^2.0.1",
+    "guid": "0.0.12",
     "gulp": "^3.9.0",
     "gulp-live-server": "0.0.29",
     "react": "^0.14.2",
