@@ -1,22 +1,11 @@
 'use strict';
 
 const dispatcher = require('./../dispatcher');
+const rest = require('./../helpers/restHelper');
 
 function TodoListItemStore() {
-	let tasks = [
-		{
-			todo: '1st Todo list item!',
-			checked: false
-		},
-		{
-			todo: '2nd Todo list item!',
-			checked: true
-		},
-		{
-			todo: '3rd Todo list item!',
-			checked: false
-		}
-	];
+
+	let tasks = [];
 	let listeners = [];
 
 	function getItems() {
@@ -79,6 +68,13 @@ function TodoListItemStore() {
 			}
 		}
 	});
+
+	// invoking Promise
+	rest.get('api/tasks')
+		.then((data) => {
+			tasks = data;
+			triggerListeners();
+		});
 
 	return {
 		getItems: getItems,
