@@ -8,6 +8,13 @@ let action = {
 			payload: task,
 			type: 'todo-task:add'
 		});
+	},
+
+	delete(task) {
+		dispatcher.dispatch({
+			payload: task,
+			type: 'todo-task:delete'
+		});
 	}
 };
 

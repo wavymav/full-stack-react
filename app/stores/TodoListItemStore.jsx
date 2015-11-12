@@ -26,6 +26,18 @@ function TodoListItemStore() {
 		triggerListeners();
 	}
 
+	function deleteTodoTask(task) {
+		let index;
+		tasks.filter((_task, _index) => {
+			if (_task.todo === task.todo) {
+				index = _index;
+			}
+		});
+
+		tasks.splice(index, 1);
+		triggerListeners();
+	}
+
 	function onChange(listener) {
 		listeners.push(listener);
 	}
@@ -43,6 +55,9 @@ function TodoListItemStore() {
 			switch(split[1]) {
 				case 'add':
 					addTodoTask(event.payload);
+					break;
+				case 'delete':
+					deleteTodoTask(event.payload);
 					break;
 			}
 		}
