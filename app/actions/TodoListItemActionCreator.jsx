@@ -15,6 +15,20 @@ let action = {
 			payload: task,
 			type: 'todo-task:delete'
 		});
+	},
+
+	check(task) {
+		dispatcher.dispatch({
+			payload: task,
+			type: 'todo-task:check'
+		});
+	},
+
+	uncheck(task) {
+		dispatcher.dispatch({
+			payload: task,
+			type: 'todo-task:uncheck'
+		});
 	}
 };
 

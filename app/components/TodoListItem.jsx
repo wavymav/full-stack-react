@@ -8,6 +8,14 @@ let TodoListItem = React.createClass({
 		action.delete(this.props.task);
 	},
 
+	toggleChecked(event) {
+		if (!this.props.task.checked) {
+			action.check(this.props.task);
+		} else {
+			action.uncheck(this.props.task);
+		}
+	},
+
 	render() {
 		const taskClassName = this.props.task.checked ? 'checked' : '';
 
@@ -16,6 +24,10 @@ let TodoListItem = React.createClass({
 				<button className="delete" onClick={this.deleteTask}>
 					&times;
 				</button>
+				<input
+					type="checkbox"
+					checked={this.props.task.checked}
+					onClick={this.toggleChecked} />
 				<span className="text">{this.props.task.todo}</span>
 			</li>
 		);

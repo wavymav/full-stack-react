@@ -5,14 +5,16 @@ const dispatcher = require('./../dispatcher');
 function TodoListItemStore() {
 	let tasks = [
 		{
-			todo: '1st Todo list item!'
+			todo: '1st Todo list item!',
+			checked: false
 		},
 		{
 			todo: '2nd Todo list item!',
 			checked: true
 		},
 		{
-			todo: '3rd Todo list item!'
+			todo: '3rd Todo list item!',
+			checked: false
 		}
 	];
 	let listeners = [];
@@ -38,6 +40,15 @@ function TodoListItemStore() {
 		triggerListeners();
 	}
 
+	function setTodoTask(task, isChecked) {
+		let _task = tasks.filter((t) => {
+			return t.todo === task.name
+		})[0];
+
+		task.checked = isChecked || false;
+		triggerListeners();
+	}
+
 	function onChange(listener) {
 		listeners.push(listener);
 	}
@@ -58,6 +69,12 @@ function TodoListItemStore() {
 					break;
 				case 'delete':
 					deleteTodoTask(event.payload);
+					break;
+				case 'check':
+					setTodoTask(event.payload, true);
+					break;
+				case 'uncheck':
+					setTodoTask(event.payload, false);
 					break;
 			}
 		}
