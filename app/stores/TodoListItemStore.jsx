@@ -15,6 +15,8 @@ function TodoListItemStore() {
 	function addTodoTask(task) {
 		tasks.push(task);
 		triggerListeners();
+
+		rest.post('api/tasks', task);
 	}
 
 	function deleteTodoTask(task) {

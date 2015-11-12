@@ -19,5 +19,9 @@ module.exports = (app) => {
 	app.route('/api/tasks')
 		.get((req, res) => {
 			res.send(tasks);
+		})
+		.post((req, res) => {
+			var task = req.body;
+			tasks.push(task);
 		});
 }

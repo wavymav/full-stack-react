@@ -2,7 +2,7 @@
 
 const $ = require('jquery');
 
-let getUrl = (url) => {
+let getData = (url) => {
 	return new Promise((resolve, reject) => {
 		$.ajax({
 			url: url,
@@ -13,6 +13,19 @@ let getUrl = (url) => {
 	});
 };
 
+let postData = (url, data) => {
+	return new Promise((resolve, reject) => {
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data: data,
+			success: resolve,
+			error: reject
+		});
+	});
+};
+
 module.exports = {
-	get: getUrl
+	get: getData,
+	post: postData
 }
