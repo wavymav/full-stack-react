@@ -2,20 +2,21 @@
 
 const React = require('react');
 const TodoList = require('./components/TodoList.jsx');
+const TodoListItemStore = require('./stores/TodoListItemStore.jsx');
 
-let initialTodos = [
-	{
-		todo: '1st Todo list item!'
-	},
-	{
-		todo: '2nd Todo list item!',
-		checked: true
-	},
-	{
-		todo: '3rd Todo list item!'
-	}
-];
+let initialTodos = TodoListItemStore.getItems();
 
-React.render(<TodoList tasks={initialTodos} />, app);
+function render() {
+	React.render(<TodoList tasks={initialTodos} />, app);
+}
+
+TodoListItemStore.onChange((tasks) => {
+	initialTodos = tasks;
+	render();
+});
+
+render();
+
+
 
 console.log('running main.jsx');
