@@ -1,6 +1,7 @@
 'use strict';
 
 const React = require('react');
+const action = require('./../actions/TodoListItemActionCreator.jsx');
 
 let TodoListAddItem = React.createClass({
 	getInitialState() {
@@ -17,19 +18,24 @@ let TodoListAddItem = React.createClass({
 
 	handleSubmit(event) {
 		event.preventDefault();
-		console.log('Adding item!', this.state.input);
+		// console.log('Adding item!', this.state.input);
+		action.add({
+			todo: this.state.input
+		});
+
+		this.setState({
+			input: ''
+		});
 	},
 
 	render() {
-		const inputValue = this.state.input;
-
 		return (
 			<form className="new-task" onSubmit={this.handleSubmit}>
 				<input
 					onChange={this.handleInput}
 					type="text"
 					placeholder="Type to add new tasks"
-					value={inputValue} />
+					value={this.state.input} />
 			</form>
 		);
 	}

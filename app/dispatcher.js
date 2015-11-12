@@ -4,19 +4,21 @@ const guid = require('guid');
 
 let listeners = {};
 
-let dispacter = {
+let dispatcher = {
 	register(callback) {
-		var id = guid.raw();
+		let id = guid.raw();
 		listeners[id] = callback;
 		return id;
 	},
 
 	dispatch(payload) {
-		console.info('Dispatching...', payload.type);
+		console.info('Dispatching...', payload);
 
-		for (var id in listeners) {
-			var listener = listeners[id];
+		for (let id in listeners) {
+			let listener = listeners[id];
 			listener(payload);
 		}
 	}
-}
+};
+
+module.exports = dispatcher;
